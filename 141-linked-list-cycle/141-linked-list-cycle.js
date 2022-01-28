@@ -11,10 +11,13 @@
  * @return {boolean}
  */
 var hasCycle = function(head) {
+  if (!head || !head.next) {
+    return false
+  }
   let slowPointer = head;
-  let fastPointer = head;
-    while (fastPointer !== null && fastPointer.next !== null && fastPointer.next.next !== null) {
-      if (slowPointer.next === fastPointer.next.next) {
+  let fastPointer = head.next;
+    while (fastPointer && fastPointer.next) {
+      if (slowPointer === fastPointer) {
         return true
       }
       slowPointer = slowPointer.next;
