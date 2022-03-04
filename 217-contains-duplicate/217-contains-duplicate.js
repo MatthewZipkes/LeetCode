@@ -3,13 +3,15 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-  let uniqSet = new Set();
+  //loop through an array and check if the num already exists and if it does return true
+  // if it doesn't return false
+  let uniqNums = new Set();
   for (let i = 0; i < nums.length; i++) {
-    if (!uniqSet.has(nums[i])) {
-      uniqSet.add(nums[i])
+    if (!uniqNums.has(nums[i])) {
+      uniqNums.add(nums[i])
     } else {
-      return true
+      return true;
     }
-  }
+  } 
   return false
 };
